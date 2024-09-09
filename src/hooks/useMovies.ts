@@ -1,3 +1,5 @@
+// Here is my useMovies hook which allows me to show movies according to the filters.
+
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { MovieApiResponse } from "../types";
 import { fetchMovies } from "../api/tmdbApi";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Select } from "antd";
-import { DebounceInput } from "react-debounce-input";
+import { DebounceInput } from "react-debounce-input"; // I am using this DebounceInput because it is very simple and working perfect.
 
 const { Option } = Select;
 
@@ -24,7 +24,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onQueryChange }) => {
 
   return (
     <div className="mb-4 flex space-x-4">
-      {/* Select for query filters */}
       <Select
         defaultValue="popular"
         style={{ width: 200 }}

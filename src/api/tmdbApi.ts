@@ -1,3 +1,6 @@
+// Here I take the data from the TMBD and according to the used filter, it chooses needed url.
+
+import axios from "axios";
 import { MovieApiResponse } from "../types";
 
 export const fetchMovies = async (
@@ -17,19 +20,16 @@ export const fetchMovies = async (
     url = `https://api.themoviedb.org/3/movie/${query}?api_key=${apiKey}&page=${page}`;
   }
 
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization: `Bearer ${bearerToken}`,
-    },
-  };
+  try {
+    const response = await axios.get<MovieApiResponse>(url, {
+      headers: {
+        accept: "application/json",
+        Authorization: `Bearer ${bearerToken}`,
+      },
+    });
 
-  const response = await fetch(url, options);
-
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
+    return response.data;
+  } catch (error: any) {
+    throw new Error(`Failed to fetch movies: ${error.message}`);
   }
-
-  return response.json();
 };
