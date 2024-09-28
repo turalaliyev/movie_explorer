@@ -8,7 +8,9 @@ import {
 const Header = () => {
   return (
     <div className="p-3 flex justify-between items-center bg-gradient-to-r from-red-600 via-red-700 to-red-800 w-full">
-      <div className="text-5xl font-bold text-white">Movie Explorer</div>
+      <div className="text-3xl md:text-5xl font-bold text-white">
+        Movie Explorer
+      </div>
 
       <div className="flex flex-col md:flex-row justify-center gap-2 items-center space-x-4">
         <div className="flex items-center space-x-4">
