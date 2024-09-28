@@ -4,11 +4,12 @@
 
 import React from "react";
 import MoviesList from "./components/MoviesList";
+import Header from "./components/Header";
 
 const App: React.FC = () => {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold mb-4">Movie Explorer</h1>
+    <div>
+      <Header />
       <MoviesList />
     </div>
   );
